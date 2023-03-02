@@ -1,8 +1,30 @@
-## Gatling Corp React project
+# Gatling Corp React project
 
 Hello, this is my entry for Gatling's hiring technical test.
 
 This project is made from https://github.com/gatling/react-interview-project template.
+
+## Requirements
+
+- [Nvm](https://github.com/nvm-sh/nvm) or NodeJS v16.14.0 (If you use NVM, simply type `nvm use` in your terminal in the root directory and nvm will download and set your current path to the correct version of NodeJS used in this project)
+- yarn installed globally : `npm install -g yarn`
+
+## Installation
+
+- `yarn install` to download the dependencies
+- `yarn run start` to start the app on http://localhost:3000
+
+## How to contribute
+
+When opening a new pull request, build consistency and non regression tests will automatically be launched by the GitHub CI.
+
+In case you need to launch these steps on your dev env, please use the following commands :
+
+- `yarn run build` to build the app in production mode
+- `yarn run test` to run unit and integration tests
+- `yarn run e2e` to run end-to-end tests, against a locally running app
+
+## Context
 
 Here is the original README :
 
