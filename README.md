@@ -1,5 +1,12 @@
 ## Gatling Corp React project
 
+Hello, this is my entry for Gatling's hiring technical test.
+
+This project is made from https://github.com/gatling/react-interview-project template.
+
+Here is the original README :
+
+```
 The goal of this small project is to create a small webapp displaying users and their related posts (data are located
 on [jsonplaceholder](https://jsonplaceholder.typicode.com)). 
 
@@ -28,3 +35,9 @@ Please code as you would do in your everyday work.
 - use redux
 - split the application into different pages
 - add tools typically used in a development environment (linters, code formatter, ...)
+``` 
+
+Here is a list of thinks worth mentioning :
+
+- Added `strictNullCheck: true` for `tsconfig.json`
+- Added GitHub pipeline to check app build consistency and launch automated tests for CI.
