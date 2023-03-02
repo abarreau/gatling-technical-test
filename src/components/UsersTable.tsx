@@ -1,5 +1,5 @@
-import React, {FunctionComponent, useEffect, useState} from 'react';
-import axios from "axios";
+import { FC, useEffect, useState } from 'react';
+import axios from 'axios';
 
 export type User = {
     id: number,
@@ -7,11 +7,11 @@ export type User = {
     username: string
 }
 
-const UsersTable: FunctionComponent = () => {
+const UsersTable: FC = () => {
     const [users, setUsers] = useState<User[]>([]);
 
     useEffect(() => {
-        const url = "https://jsonplaceholder.typicode.com/users";
+        const url = 'https://jsonplaceholder.typicode.com/users';
         axios.get(url)
             .then(response => setUsers(response.data));
     }, []);
@@ -39,7 +39,7 @@ const UsersTable: FunctionComponent = () => {
                 </tr>)}
             </tbody>
         </table>
-    )
-}
+    );
+};
 
 export default UsersTable;
