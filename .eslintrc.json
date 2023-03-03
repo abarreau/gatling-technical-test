@@ -26,7 +26,6 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "array-bracket-spacing": "error",
         "indent": [
             "error",
             4
@@ -42,6 +41,8 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "array-bracket-spacing": ["error", "always"],
+        "object-curly-spacing": ["error", "always"]
     }
 }
