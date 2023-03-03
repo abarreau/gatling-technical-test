@@ -8,7 +8,7 @@ export type User = {
 }
 
 const UsersTable: FC = () => {
-    const [users, setUsers] = useState<User[]>([]);
+    const [ users, setUsers ] = useState<User[]>([]);
 
     useEffect(() => {
         const url = 'https://jsonplaceholder.typicode.com/users';
