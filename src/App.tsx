@@ -1,9 +1,9 @@
 import './App.css';
-import UsersTable from './components/UsersTable';
+import { Card } from './components/card/Card';
 
 function App () {
     return (
-        <UsersTable/>
+        <Card/>
     );
 }
 
