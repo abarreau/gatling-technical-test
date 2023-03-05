@@ -15,8 +15,12 @@
 
     --primary-action: #64FFDA;
     --secondary-action: #00BFA5;
+
+    --font-color-regular: #333;
 }
 
 * {
     font-family: 'Roboto', sans-serif;
+    color: var(--font-color-regular);
 }
+

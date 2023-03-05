@@ -1,7 +1,7 @@
-import './App.css';
 import { Card } from './components/card/Card';
 import { PageHeader } from './components/page-header/PageHeader';
 import { PageContent } from './components/page-content/PageContent';
+import { UserList } from './pages/user-list/UserList';
 
 function App () {
     return (
@@ -9,7 +9,9 @@ function App () {
             <PageHeader>Gatling Corp Test</PageHeader>
             <PageContent>
                 <h1>Users</h1>
-                <Card/>
+                <Card>
+                    <UserList></UserList>
+                </Card>
             </PageContent>
         </>
     );

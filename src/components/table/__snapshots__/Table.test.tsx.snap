@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should display an empty message if no rows 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr>
+      <th>
+        One
+      </th>
+      <th>
+        Two
+      </th>
+      <th>
+        Three
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      Empty dataset
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table should display component 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr>
+      <th>
+        One
+      </th>
+      <th>
+        Two
+      </th>
+      <th>
+        Three
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Uno
+      </td>
+      <td>
+        Dos
+      </td>
+      <td>
+        Tres
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Un
+      </td>
+      <td>
+        Deux
+      </td>
+      <td>
+        Trois
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table should not display anything if there is no column headers 1`] = `null`;
