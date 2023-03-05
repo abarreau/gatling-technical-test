@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should display component 1`] = `
+<div
+  className="card"
+>
+  My card
+</div>
+`;
