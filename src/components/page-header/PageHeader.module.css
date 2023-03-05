@@ -1,0 +1,29 @@
+:root {
+    --header-height: 75px;
+    --header-background: var(--primary-700);
+}
+
+.mainHeader {
+    width: 100%;
+    height: var(--header-height);
+
+    padding: 0 20px;
+    margin-bottom: 10px;
+
+    background-color: var(--header-background);
+
+    color: white;
+    font-weight: bold;
+    font-size: 2.5em;
+    line-height: var(--header-height);
+}
+
+@media (max-width: 480px) {
+    :root {
+        --header-height: 50px;
+    }
+
+    .mainHeader {
+        font-size: 1.5em;
+    }
+}
