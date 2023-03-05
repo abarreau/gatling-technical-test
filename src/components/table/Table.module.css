@@ -1,0 +1,22 @@
+:root {
+    --table-cell-padding: 10px;
+    --table-row-height: 50px;
+}
+
+.table {
+    width: 100%;
+}
+
+.table thead {
+    font-weight: bold;
+    text-align: left;
+}
+
+.table tr {
+    height: var(--table-row-height);
+    border-bottom: 1px solid #ddd;
+}
+
+.table tr:last-of-type {
+    border: 0;
+}
