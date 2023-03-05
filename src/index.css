@@ -1,1 +1,22 @@
 @import-sanitize;
+
+:root {
+    /* COLOR PALETTE */
+    --primary-900: #004D40;
+    --primary-800: #00695C;
+    --primary-700: #00796B;
+    --primary-600: #00897B;
+    --primary-500: #009688;
+    --primary-400: #26A69A;
+    --primary-300: #4DB6AC;
+    --primary-200: #80CBC4;
+    --primary-100: #B2DFDB;
+    --primary-50: #E0F2F1;
+
+    --primary-action: #64FFDA;
+    --secondary-action: #00BFA5;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
