@@ -1,11 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { createRoot } from 'react-dom/client';
+import { pipe } from 'fp-ts/function';
+import { fold, fromNullable } from 'fp-ts/Either';
 
-ReactDOM.render(
-    <React.StrictMode>
-        <App />
-    </React.StrictMode>,
-    document.getElementById('root')
+pipe(
+    fromNullable(null)(document.getElementById('root')),
+    fold(
+        () => console.error('Could not find root node of document. Aborting execution.'),
+        (el: HTMLElement) => {
+            const root = createRoot(el);
+            root.render(
+                <React.StrictMode>
+                    <App/>
+                </React.StrictMode>);
+        }
+    )
 );
