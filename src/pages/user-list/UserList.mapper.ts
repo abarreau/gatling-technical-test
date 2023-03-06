@@ -4,7 +4,20 @@ export const usersToTableDatasource = (users: User[]): TableDatasource | undefin
     return users ? {
         columnHeaders: [ 'Name', 'Username', 'Email', 'Address' ],
         rows: users.map(user => ({
-            columnValues: [ user.name, user.username, user.email, addressFormatter(user.address) ]
+            columns: [ {
+                value: user.name,
+                isEditable: true,
+                onEdit: () => true
+            }, {
+                value: user.username,
+                isEditable: false
+            }, {
+                value: user.email,
+                isEditable: false
+            }, {
+                value: addressFormatter(user.address),
+                isEditable: false
+            } ]
         }))
     } : undefined;
 
