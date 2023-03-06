@@ -71,3 +71,4 @@ export const fetchPosts = createAsyncThunk<{ posts: Post[], userId: number }, nu
 );
 
 export const postsSelector = (state: RootState) => state.posts.posts;
+export const postsStateStatusSelector = (state: RootState) => state.posts.status;
