@@ -1,0 +1,8 @@
+.statsContainer {
+    width: 100%;
+    text-align: right;
+}
+
+.statsContainer .line {
+    display: block;
+}
