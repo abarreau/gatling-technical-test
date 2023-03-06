@@ -7,10 +7,18 @@ describe('Table', () => {
             columnHeaders: [ 'One', 'Two', 'Three' ],
             rows: [
                 {
-                    columnValues: [ 'Uno', 'Dos', 'Tres' ]
+                    columns: [
+                        { value: 'Uno', isEditable: false },
+                        { value: 'Dos', isEditable: false },
+                        { value: 'Tres', isEditable: false }
+                    ]
                 },
                 {
-                    columnValues: [ 'Un', 'Deux', 'Trois' ]
+                    columns: [
+                        { value: 'Un', isEditable: false },
+                        { value: 'Deux', isEditable: false },
+                        { value: 'Trois', isEditable: false }
+                    ]
                 }
             ]
         };

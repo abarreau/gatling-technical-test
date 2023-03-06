@@ -20,3 +20,32 @@
 .table tr:last-of-type {
     border: 0;
 }
+
+.table td.editable {
+    cursor: pointer;
+}
+
+.table td.editable i.editIcon {
+    background-image: url("/public/assets/img/edit.png");
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    visibility: hidden;
+    display: inline-block;
+}
+
+.table td.editable:hover {
+    background-color: #eee;
+}
+
+.table td.editable:hover i.editIcon {
+    visibility: visible;
+}
+
+.table td.editable input {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    background-color: #eee;
+}

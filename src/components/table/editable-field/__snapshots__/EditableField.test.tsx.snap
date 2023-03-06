@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should display component 1`] = `
+<td
+  onClick={[Function]}
+>
+  test
+</td>
+`;
+
+exports[`Table should display input when clicking on td 1`] = `
+<td>
+  <input
+    autoFocus={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+    value="test"
+  />
+</td>
+`;
+
+exports[`Table should invoke onValueChange 1`] = `
+<td
+  onClick={[Function]}
+>
+  test
+</td>
+`;
