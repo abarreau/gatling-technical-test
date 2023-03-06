@@ -2,7 +2,7 @@
 
 Hello, this is my entry for Gatling's hiring technical test.
 
-This project is made from https://github.com/gatling/react-interview-project template.
+This project is built upon https://github.com/gatling/react-interview-project template.
 
 ## Requirements
 
@@ -23,6 +23,18 @@ In case you need to launch these steps on your dev env, please use the following
 - `yarn run build` to build the app in production mode
 - `yarn run test` to run unit and integration tests
 - `yarn run e2e` to run end-to-end tests, against a locally running app
+
+## For the Gatling people reading this code
+
+Here is a list of things worth mentioning :
+
+- Added `strictNullCheck: true` in `tsconfig.json`
+- Added GitHub pipeline to check app build consistency and launch automated tests for CI.
+- Added FP-TS (usually for business code)
+- Added a bit of responsive design (but it's not that simple when working with tables)
+- Tried to use TS utility types when it felt right
+- Delay when loading users is faked, to show the spinner
+- To edit the name of user, click on it, change its value and data will be persisted when input loses focus.
 
 ## Context
 
@@ -58,8 +70,3 @@ Please code as you would do in your everyday work.
 - split the application into different pages
 - add tools typically used in a development environment (linters, code formatter, ...)
 ``` 
-
-Here is a list of thinks worth mentioning :
-
-- Added `strictNullCheck: true` for `tsconfig.json`
-- Added GitHub pipeline to check app build consistency and launch automated tests for CI.
