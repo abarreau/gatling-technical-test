@@ -33,8 +33,11 @@ Here is a list of things worth mentioning :
 - Added FP-TS (usually for business code)
 - Added a bit of responsive design (but it's not that simple when working with tables)
 - Tried to use TS utility types when it felt right
+- Chose not to add any integration test for the page components as I think it's more convenient and useful to do E2E testing for this matter
+- Added tests for atomic components and mappers
 - Delay when loading users is faked, to show the spinner
 - To edit the name of user, click on it, change its value and data will be persisted when input loses focus.
+
 
 ## Context
 
