@@ -24,7 +24,7 @@ export const Table: FC<{ datasource: Readonly<TableDatasource> }> = ({ datasourc
         <tbody>
             {
                 datasource.rows.length === 0
-                    ? <tr>Empty dataset</tr>
+                    ? <tr><td>Empty dataset</td></tr>
                     : datasource.rows.map((row, rowIndex) =>
                         <tr key={rowIndex}>
                             {

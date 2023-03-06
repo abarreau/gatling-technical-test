@@ -64,7 +64,13 @@ export const fetchUsers = createAsyncThunk<User[]>(
     'users/fetch',
     async () => {
         // Fetch the backend endpoint:
-        const response = await fetch(`${process.env['REACT_APP_API_BASE_URL']}/users`);
+        const fetchWithDelay: Promise<Response> = new Promise((resolve) => {
+            // dummyTimeout to fake long loading
+            setTimeout(() => {
+                fetch(`${process.env['REACT_APP_API_BASE_URL']}/users`).then(result => resolve(result));
+            }, 2000);
+        });
+        const response = await fetchWithDelay;
 
         // Get the JSON from the response:
         const data: User[] = await response.json();
@@ -75,6 +81,7 @@ export const fetchUsers = createAsyncThunk<User[]>(
 );
 
 export const usersSelector = (state: RootState) => state.users.users;
+export const usersStoreStatusSelected = (state: RootState) => state.users.status;
 export const userSelector = createSelector([
     (state: RootState) => state.users.users,
     (state, userId: number | undefined) => userId
