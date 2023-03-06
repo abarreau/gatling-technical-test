@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs should display component 1`] = `
+<div
+  className="breadcrumbsContainer"
+>
+  <span>
+    <a
+      className="link"
+      href="/"
+      onClick={[Function]}
+    >
+      <span
+        className="link"
+      >
+        Index
+      </span>
+    </a>
+    <span
+      className="breadcrumbSeparator"
+    >
+      /
+    </span>
+  </span>
+  <span>
+    Page1
+  </span>
+</div>
+`;
