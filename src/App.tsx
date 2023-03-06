@@ -11,7 +11,7 @@ function App () {
 
             <Routes>
                 <Route index element={<UserPage/>} />
-                <Route path="posts" element={<Posts />}/>
+                <Route path="/posts/:userId" element={<Posts />}/>
                 <Route path="*" element={<NotFound />} />
             </Routes>
         </>

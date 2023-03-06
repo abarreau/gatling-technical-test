@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
 export const USERS_KEY = 'users';
@@ -64,7 +64,6 @@ export const fetchUsers = createAsyncThunk<User[]>(
     'users/fetch',
     async () => {
         // Fetch the backend endpoint:
-        console.log('Env', process.env);
         const response = await fetch(`${process.env['REACT_APP_API_BASE_URL']}/users`);
 
         // Get the JSON from the response:
@@ -76,3 +75,8 @@ export const fetchUsers = createAsyncThunk<User[]>(
 );
 
 export const usersSelector = (state: RootState) => state.users.users;
+export const userSelector = createSelector([
+    (state: RootState) => state.users.users,
+    (state, userId: number | undefined) => userId
+],
+(users, userId) => users.find(it => it.id === userId));

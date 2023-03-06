@@ -8,10 +8,10 @@ export const Breadcrumbs: FC<{ segments: BreadcrumbSegment[] }> = ({ segments })
             {
                 segments.map((segment, index) => {
                     return index < segments.length - 1
-                        ? <>
-                            <Link className={styles.link} to={segment.url}><span className={styles.link} key={index}>{ segment.name }</span></Link>
+                        ? <span key={index}>
+                            <Link className={styles.link} to={segment.url}><span className={styles.link} >{ segment.name }</span></Link>
                             <span className={styles.breadcrumbSeparator}>/</span>
-                        </>
+                        </span>
                         : <span key={index}>{ segment.name }</span>;
                 })
             }
