@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from 'react';
-import { Table, TableDatasource } from '../../components/table/Table';
 import axios from 'axios';
 import { User, usersToTableDatasource } from './UserList.mapper';
-import { Spinner } from '../../components/spinner/Spinner';
+import { Table, TableDatasource } from '../../../components/table/Table';
+import { Spinner } from '../../../components/spinner/Spinner';
 
 export const UserList: FC = () => {
     const [ users, setUsers ] = useState<User[] | undefined>(undefined);
@@ -13,7 +13,7 @@ export const UserList: FC = () => {
             const url = 'https://jsonplaceholder.typicode.com/users';
             axios.get(url)
                 .then(response => setUsers(response.data));
-        }, 0);
+        }, 500);
     }, []);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export const UserList: FC = () => {
     }, [ users ]);
 
     if(!dataSource) {
-        return (<Spinner></Spinner>);
+        return (<Spinner/>);
     } else {
         return (<Table datasource={dataSource}></Table>);
     }

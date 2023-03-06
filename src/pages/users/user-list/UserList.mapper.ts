@@ -1,4 +1,4 @@
-import { TableDatasource } from '../../components/table/Table';
+import { TableDatasource } from '../../../components/table/Table';
 
 export const usersToTableDatasource = (users: User[]): TableDatasource | undefined => {
     return users ? {
