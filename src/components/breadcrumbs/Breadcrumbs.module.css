@@ -1,0 +1,12 @@
+.breadcrumbsContainer {
+    margin-top: 20px;
+}
+
+.breadcrumbSeparator {
+    margin: 0 3px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--primary-400);
+}
