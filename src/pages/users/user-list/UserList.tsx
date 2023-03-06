@@ -3,7 +3,7 @@ import { usersToTableDatasource } from './UserList.mapper';
 import { Table, TableDatasource } from '../../../components/table/Table';
 import { Spinner } from '../../../components/spinner/Spinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchUsers, usersSelector } from '../../../redux/user-slice';
+import { fetchUsers, usersSelector } from '../../../redux/users-slice';
 
 export const UserList: FC = () => {
     const users = useSelector(usersSelector);

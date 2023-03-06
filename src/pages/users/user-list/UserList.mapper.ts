@@ -1,5 +1,5 @@
 import { TableDatasource } from '../../../components/table/Table';
-import { User, UserAddress } from '../../../redux/user-slice';
+import { User, UserAddress } from '../../../redux/users-slice';
 
 export const usersToTableDatasource = (users: User[]): TableDatasource | undefined => {
     return users ? {
