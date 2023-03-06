@@ -1,18 +1,19 @@
-import { Card } from './components/card/Card';
 import { PageHeader } from './components/page-header/PageHeader';
-import { PageContent } from './components/page-content/PageContent';
-import { UserList } from './pages/user-list/UserList';
+import { Route, Routes } from 'react-router-dom';
+import { UserPage } from './pages/users/UserPage';
+import { Posts } from './pages/posts/Posts';
+import { NotFound } from './pages/not-found/NotFound';
 
 function App () {
     return (
         <>
             <PageHeader>Gatling Corp Test</PageHeader>
-            <PageContent>
-                <h1>Users</h1>
-                <Card>
-                    <UserList></UserList>
-                </Card>
-            </PageContent>
+
+            <Routes>
+                <Route index element={<UserPage/>} />
+                <Route path="posts" element={<Posts />}/>
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </>
     );
 }

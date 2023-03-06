@@ -4,6 +4,7 @@ import App from './App';
 import { createRoot } from 'react-dom/client';
 import { pipe } from 'fp-ts/function';
 import { fold, fromNullable } from 'fp-ts/Either';
+import { BrowserRouter } from 'react-router-dom';
 
 pipe(
     fromNullable(null)(document.getElementById('root')),
@@ -13,7 +14,9 @@ pipe(
             const root = createRoot(el);
             root.render(
                 <React.StrictMode>
-                    <App/>
+                    <BrowserRouter>
+                        <App/>
+                    </BrowserRouter>
                 </React.StrictMode>);
         }
     )
