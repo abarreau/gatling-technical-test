@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { userSlice } from './user-slice';
+import { usersSlice } from './users-slice';
 import thunkMiddleware from 'redux-thunk';
 
 export const STORE_KEY = 'storeState';
 
 export const store = configureStore({
     reducer: {
-        users: userSlice.reducer,
+        users: usersSlice.reducer,
     },
     middleware: [ thunkMiddleware ]
 });

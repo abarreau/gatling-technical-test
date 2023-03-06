@@ -26,7 +26,7 @@ export type UserAddress = {
 
 export type LatLng = { lat: string, lng: string };
 
-export const userSlice = createSlice(
+export const usersSlice = createSlice(
     {
         name: USERS_KEY,
         initialState: {
@@ -58,13 +58,14 @@ export const userSlice = createSlice(
     }
 );
 
-export const { saveUsers } = userSlice.actions;
+export const { saveUsers } = usersSlice.actions;
 
 export const fetchUsers = createAsyncThunk<User[]>(
     'users/fetch',
     async () => {
         // Fetch the backend endpoint:
-        const response = await fetch(`${process.env['REACT_APP_API_BASE_URL ']}/users`);
+        console.log('Env', process.env);
+        const response = await fetch(`${process.env['REACT_APP_API_BASE_URL']}/users`);
 
         // Get the JSON from the response:
         const data: User[] = await response.json();
