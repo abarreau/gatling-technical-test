@@ -29,12 +29,17 @@ export const Table: FC<{ datasource: Readonly<TableDatasource> }> = ({ datasourc
                         <tr key={rowIndex}>
                             {
                                 row.columns.map((column, columnIndex) =>
-                                    column.isEditable
+                                    column.type === 'editable'
                                         ? <EditableField className={styles.editable} key={columnIndex} value={column.value} onValueChange={(val: string) => console.log('Should update !', val)}>
                                             { column.value }
                                             <i className={styles.editIcon}></i>
                                         </EditableField>
-                                        : <td key={columnIndex}>{ column.value }</td>
+                                        : column.type === 'action'
+                                            ? <td key={columnIndex}>{
+                                                column.buttons.map((button, buttonIndex) =>
+                                                    <button key={buttonIndex} onClick={() => button.onClick(button.metadata)}>{ button.label }</button>)
+                                            }</td>
+                                            : <td key={columnIndex}>{ column.value }</td>
                                 )
                             }
                         </tr>
@@ -44,15 +49,32 @@ export const Table: FC<{ datasource: Readonly<TableDatasource> }> = ({ datasourc
     </table>);
 };
 
-export type TableDatasource = {
+export type TableDatasource = Readonly<{
     columnHeaders: string[],
     rows: {
-        columns: TableDatasourceColumn[]
+        columns: (TableDatasourceActionColumn | TableDatasourceSimpleColumn | TableDatasourceEditableColumn)[]
     }[]
-};
+}>;
 
-export type TableDatasourceColumn = {
+export type TableDatasourceColumn = Readonly<{
+    type: 'editable' | 'simple' | 'action'
     value: string;
-    isEditable: boolean;
+}>
+
+export type TableDatasourceEditableColumn = TableDatasourceColumn & Readonly<{
+    type: 'editable',
     onEdit?: (value: string) => boolean
-}
+}>
+
+export type TableDatasourceSimpleColumn = TableDatasourceColumn & Readonly<{
+    type: 'simple'
+}>
+
+export type TableDatasourceActionColumn = Pick<TableDatasourceColumn, 'type'> & Readonly<{
+    type: 'action',
+    buttons: {
+        metadata: number;
+        label: string;
+        onClick: (metadata: number) => void
+    }[]
+}>

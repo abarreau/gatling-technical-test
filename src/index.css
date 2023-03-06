@@ -14,7 +14,10 @@
     --primary-50: #E0F2F1;
 
     --primary-action: #64FFDA;
+    --primary-action-hover: #69ffdc;
+
     --secondary-action: #00BFA5;
+    --secondary-action-hover: #01d2b5;
 
     --font-color-regular: #333;
 }

@@ -49,3 +49,21 @@
     border: 0;
     background-color: #eee;
 }
+
+.table td button {
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    background-color: var(--secondary-action);
+    color: white;
+    cursor: pointer;
+}
+
+.table td button:hover {
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    background-color: var(--secondary-action-hover);
+}

@@ -65,6 +65,27 @@ exports[`Table should display component 1`] = `
         Trois
       </td>
     </tr>
+    <tr>
+      <td
+        className="editable"
+        onClick={[Function]}
+      >
+        Un
+        <i
+          className="editIcon"
+        />
+      </td>
+      <td>
+        Deux
+      </td>
+      <td>
+        <button
+          onClick={[Function]}
+        >
+          myAction
+        </button>
+      </td>
+    </tr>
   </tbody>
 </table>
 `;
