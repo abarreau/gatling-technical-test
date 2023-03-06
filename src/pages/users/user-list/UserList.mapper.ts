@@ -1,4 +1,5 @@
 import { TableDatasource } from '../../../components/table/Table';
+import { User, UserAddress } from '../../../redux/user-slice';
 
 export const usersToTableDatasource = (users: User[]): TableDatasource | undefined => {
     return users ? {
@@ -26,20 +27,3 @@ export const usersToTableDatasource = (users: User[]): TableDatasource | undefin
 const addressFormatter: (address: UserAddress) => string =
     (address: UserAddress) => `${address.suite} ${address.street} ${address.zipcode} ${address.city}`;
 
-export type User = {
-    id: number,
-    name: string,
-    username: string,
-    email: string,
-    address: UserAddress
-}
-
-export type UserAddress = {
-    street: string,
-    suite: string,
-    city: string,
-    zipcode: string,
-    geo: LatLng
-};
-
-export type LatLng = { lat: string, lng: string };

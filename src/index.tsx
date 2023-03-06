@@ -5,6 +5,8 @@ import { createRoot } from 'react-dom/client';
 import { pipe } from 'fp-ts/function';
 import { fold, fromNullable } from 'fp-ts/Either';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
 pipe(
     fromNullable(null)(document.getElementById('root')),
@@ -14,9 +16,11 @@ pipe(
             const root = createRoot(el);
             root.render(
                 <React.StrictMode>
-                    <BrowserRouter>
-                        <App/>
-                    </BrowserRouter>
+                    <Provider store={store}>
+                        <BrowserRouter>
+                            <App/>
+                        </BrowserRouter>
+                    </Provider>
                 </React.StrictMode>);
         }
     )

@@ -1,19 +1,17 @@
 import { FC, useEffect, useState } from 'react';
-import axios from 'axios';
-import { User, usersToTableDatasource } from './UserList.mapper';
+import { usersToTableDatasource } from './UserList.mapper';
 import { Table, TableDatasource } from '../../../components/table/Table';
 import { Spinner } from '../../../components/spinner/Spinner';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers, usersSelector } from '../../../redux/user-slice';
 
 export const UserList: FC = () => {
-    const [ users, setUsers ] = useState<User[] | undefined>(undefined);
+    const users = useSelector(usersSelector);
     const [ dataSource, setDatasource ] = useState<TableDatasource>();
+    const dispatch = useDispatch<any>();
 
     useEffect(() => {
-        setTimeout(() => {
-            const url = 'https://jsonplaceholder.typicode.com/users';
-            axios.get(url)
-                .then(response => setUsers(response.data));
-        }, 500);
+        dispatch(fetchUsers());
     }, []);
 
     useEffect(() => {
