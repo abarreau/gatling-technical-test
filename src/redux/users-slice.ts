@@ -81,7 +81,7 @@ export const fetchUsers = createAsyncThunk<User[]>(
 );
 
 export const usersSelector = (state: RootState) => state.users.users;
-export const usersStoreStatusSelected = (state: RootState) => state.users.status;
+export const usersStoreStatusSelector = (state: RootState) => state.users.status;
 export const userSelector = createSelector([
     (state: RootState) => state.users.users,
     (state, userId: number | undefined) => userId
