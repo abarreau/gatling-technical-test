@@ -1,0 +1,3 @@
+.postTitle, .postContent {
+    text-transform: capitalize;
+}

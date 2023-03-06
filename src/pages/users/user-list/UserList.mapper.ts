@@ -25,7 +25,7 @@ export const usersToTableDatasource = (users: User[], navigate: NavigateFunction
                     {
                         label: 'See posts',
                         metadata: user.id,
-                        onClick: (userId: number) => navigate(`/posts?user=${userId}`)
+                        onClick: (userId: number) => navigate(`/posts/${userId}`)
                     }
                 ]
             } ]
