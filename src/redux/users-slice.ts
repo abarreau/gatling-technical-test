@@ -85,6 +85,7 @@ export const fetchUsers = createAsyncThunk<User[]>(
     }
 );
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const patchUserName = createAsyncThunk<void, { username: string, userId: number, dispatch: any }>(
     'user/update',
     async ({ username, userId, dispatch }) => {

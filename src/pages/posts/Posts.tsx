@@ -16,6 +16,7 @@ export const Posts: FC = () => {
     const posts = useSelector(postsSelector);
     const postsStateStatus = useSelector(postsStateStatusSelector);
     const currentUser = useSelector(state => userSelector(state, userId && !isNaN(+userId) ? +userId : undefined));
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const dispatch = useDispatch<any>();  // any is ugly, but I don't know how to fix the typing issue here
 
     useEffect(() => {
