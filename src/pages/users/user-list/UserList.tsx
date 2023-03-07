@@ -10,6 +10,7 @@ export const UserList: FC = () => {
     const users = useSelector(usersSelector);
     const userStateStatus = useSelector(usersStoreStatusSelector);
     const [ dataSource, setDatasource ] = useState<TableDatasource | undefined>();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const dispatch = useDispatch<any>(); // any is ugly, but I don't know how to fix the typing issue here
     const navigate = useNavigate();
 
