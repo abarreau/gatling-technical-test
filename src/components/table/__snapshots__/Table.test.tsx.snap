@@ -19,7 +19,9 @@ exports[`Table should display an empty message if no rows 1`] = `
   </thead>
   <tbody>
     <tr>
-      Empty dataset
+      <td>
+        Empty dataset
+      </td>
     </tr>
   </tbody>
 </table>
