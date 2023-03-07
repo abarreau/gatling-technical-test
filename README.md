@@ -30,13 +30,15 @@ Here is a list of things worth mentioning :
 
 - Added `strictNullCheck: true` in `tsconfig.json`
 - Added GitHub pipeline to check app build consistency and launch automated tests for CI.
-- Added FP-TS (usually for business code)
+- Added FP-TS (only for error handling here)
+- Added Redux
 - Added a bit of responsive design (but it's not that simple when working with tables)
 - Tried to use TS utility types when it felt right
 - Chose not to add any integration test for the page components as I think it's more convenient and useful to do E2E testing for this matter
-- Added tests for atomic components and mappers
+- Added integration tests for atomic components and unit tests for utility functions.
 - Delay when loading users is faked, to show the spinner
 - To edit the name of user, click on it, change its value and data will be persisted when input loses focus.
+- Some elements displayed in list have their index as key. This is not ideal. Maybe generating a hash based on the displayed value would have been better.
 
 
 ## Context
