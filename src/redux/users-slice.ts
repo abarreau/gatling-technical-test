@@ -85,6 +85,23 @@ export const fetchUsers = createAsyncThunk<User[]>(
     }
 );
 
+export const patchUserName = createAsyncThunk<void, { username: string, userId: number, dispatch: any }>(
+    'user/update',
+    async ({ username, userId, dispatch }) => {
+        const response = await fetch(`${process.env['REACT_APP_API_BASE_URL']}/users/${userId}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ username })
+        });
+
+        if(response.status >= 400) {
+            console.error('Something went wrong during api request', response.status);
+            throw Error('error.network');
+        }
+
+        dispatch(fetchUsers());
+    }
+);
+
 export const usersSelector = (state: RootState) => state.users.users;
 export const usersStoreStatusSelector = (state: RootState) => state.users.status;
 export const userSelector = createSelector([

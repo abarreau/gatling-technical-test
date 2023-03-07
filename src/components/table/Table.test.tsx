@@ -25,7 +25,7 @@ describe('Table', () => {
                 },
                 {
                     columns: [
-                        { value: 'Un', type: 'editable', onEdit: dummyFn },
+                        { value: 'Un', type: 'editable', metadata: 1, onEdit: dummyFn },
                         { value: 'Deux', type: 'simple' },
                         { type: 'action', buttons: [ { label: 'myAction', metadata: 1, onClick: dummyFn } ] }
                     ]
