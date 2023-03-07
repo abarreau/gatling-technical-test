@@ -38,7 +38,7 @@ describe('UserList mapper', () => {
             }
         ];
 
-        const mappedValue = usersToTableDatasource(users, jest.fn());
+        const mappedValue = usersToTableDatasource(users, jest.fn(), {});
 
 
         expect(JSON.stringify(mappedValue)).toEqual(JSON.stringify({
@@ -48,6 +48,7 @@ describe('UserList mapper', () => {
                     {
                         value: 'Anthony',
                         type: 'editable',
+                        metadata: 1,
                         onEdit: () => {}
                     },
                     {
@@ -78,6 +79,7 @@ describe('UserList mapper', () => {
                     {
                         value: 'Marine',
                         type: 'editable',
+                        metadata: 2,
                         onEdit: () => {}
                     },
                     {

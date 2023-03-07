@@ -10,7 +10,7 @@ export const UserList: FC = () => {
     const users = useSelector(usersSelector);
     const userStateStatus = useSelector(usersStoreStatusSelector);
     const [ dataSource, setDatasource ] = useState<TableDatasource | undefined>();
-    const dispatch = useDispatch<any>();
+    const dispatch = useDispatch<any>(); // any is ugly, but I don't know how to fix the typing issue here
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export const UserList: FC = () => {
 
     useEffect(() => {
         if(userStateStatus === 'idle') {
-            setDatasource(usersToTableDatasource(users, navigate));
+            setDatasource(usersToTableDatasource(users, navigate, dispatch));
         } else {
             setDatasource(undefined);
         }

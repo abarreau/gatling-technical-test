@@ -30,7 +30,7 @@ export const Table: FC<{ datasource: Readonly<TableDatasource> }> = ({ datasourc
                             {
                                 row.columns.map((column, columnIndex) =>
                                     column.type === 'editable'
-                                        ? <EditableField className={styles.editable} key={columnIndex} value={column.value} onValueChange={(val: string) => console.log('Should update !', val)}>
+                                        ? <EditableField className={styles.editable} key={columnIndex} value={column.value} onValueChange={(val: string) => column.onEdit(val, column.metadata)}>
                                             { column.value }
                                             <i className={styles.editIcon}></i>
                                         </EditableField>
@@ -63,7 +63,8 @@ export type TableDatasourceColumn = Readonly<{
 
 export type TableDatasourceEditableColumn = TableDatasourceColumn & Readonly<{
     type: 'editable',
-    onEdit?: (value: string) => boolean
+    metadata: number,
+    onEdit: (value: string, metadata: number) => void
 }>
 
 export type TableDatasourceSimpleColumn = TableDatasourceColumn & Readonly<{

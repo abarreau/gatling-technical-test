@@ -16,7 +16,7 @@ export const Posts: FC = () => {
     const posts = useSelector(postsSelector);
     const postsStateStatus = useSelector(postsStateStatusSelector);
     const currentUser = useSelector(state => userSelector(state, userId && !isNaN(+userId) ? +userId : undefined));
-    const dispatch = useDispatch<any>();
+    const dispatch = useDispatch<any>();  // any is ugly, but I don't know how to fix the typing issue here
 
     useEffect(() => {
         if(userId) {

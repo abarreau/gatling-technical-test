@@ -1,15 +1,16 @@
 import { TableDatasource } from '../../../components/table/Table';
-import { User, UserAddress } from '../../../redux/users-slice';
+import { patchUserName, User, UserAddress } from '../../../redux/users-slice';
 import { NavigateFunction } from 'react-router-dom';
 
-export const usersToTableDatasource = (users: User[], navigate: NavigateFunction): TableDatasource | undefined => {
+export const usersToTableDatasource = (users: User[], navigate: NavigateFunction, dispatch: any): TableDatasource | undefined => {
     return users ? {
         columnHeaders: [ 'Name', 'Username', 'Email', 'Address' ],
         rows: users.map(user => ({
             columns: [ {
                 value: user.name,
                 type: 'editable',
-                onEdit: () => true
+                metadata: user.id,
+                onEdit: (username: string, userId: number) => dispatch(patchUserName({ username, userId, dispatch }))
             }, {
                 value: user.username,
                 type: 'simple'
