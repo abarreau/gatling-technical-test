@@ -4,7 +4,7 @@ import { RootState } from './store';
 export const USERS_KEY = 'users';
 
 export type UsersState = {
-    status: 'pending' | 'idle';
+    status: 'pending' | 'idle' | 'error';
     users: User[];
 }
 
@@ -52,7 +52,7 @@ export const usersSlice = createSlice(
 
             builder.addCase(fetchUsers.rejected, () => ({
                 users: [],
-                status: 'idle'
+                status: 'error'
             }));
         }
     }
@@ -71,6 +71,11 @@ export const fetchUsers = createAsyncThunk<User[]>(
             }, 2000);
         });
         const response = await fetchWithDelay;
+
+        if(response.status >= 400) {
+            console.error('Something went wrong during api request', response.status);
+            throw Error('error.network');
+        }
 
         // Get the JSON from the response:
         const data: User[] = await response.json();

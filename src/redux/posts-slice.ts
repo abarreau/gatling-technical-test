@@ -4,7 +4,7 @@ import { RootState } from './store';
 export const POSTS_KEY = 'users';
 
 export type PostsState = {
-    status: 'idle' | 'pending';
+    status: 'idle' | 'pending' | 'error';
     currentUserId: number | undefined;
     posts: Post[]
 }
@@ -45,7 +45,7 @@ export const postsSlice = createSlice(
             builder.addCase(fetchPosts.rejected, () => ({
                 posts: [],
                 currentUserId: undefined,
-                status: 'idle'
+                status: 'error'
             }));
         }
     }
@@ -56,8 +56,12 @@ export const { savePosts } = postsSlice.actions;
 export const fetchPosts = createAsyncThunk<{ posts: Post[], userId: number }, number>(
     'posts/fetch',
     async (userId: number) => {
-        // Fetch the backend endpoint:
         const response = await fetch(`${process.env['REACT_APP_API_BASE_URL']}/users/${userId}/posts`);
+
+        if(response.status >= 400) {
+            console.error('Something went wrong during api request', response.status);
+            throw Error('error.network');
+        }
 
         // Get the JSON from the response:
         const data: Post[] = await response.json();
